@@ -1,4 +1,4 @@
-module github.com/edgexfoundry/go-mod-messaging/v2
+module github.com/farshidtz/go-mod-messaging/v2
 
 require (
 	github.com/eclipse/paho.mqtt.golang v1.3.5
