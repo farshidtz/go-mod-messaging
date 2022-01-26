@@ -134,11 +134,11 @@ func (c Client) Subscribe(topics []types.TopicChannel, messageErrors chan error)
 	}
 
 	for i := range topics {
-
 		go func(topic types.TopicChannel) {
 			topicName := convertToRedisTopicScheme(topic.Topic)
 			messageChannel := topic.Messages
 			for {
+				fmt.Println("edgexfoundry-debug: topic:", topicName)
 				message, err := c.subscribeClient.Receive(topicName)
 				if err != nil {
 					messageErrors <- err
